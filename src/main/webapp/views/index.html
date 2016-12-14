@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="windows-1250">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 th:text="${title}">Oldal címe</h1>
+        <table>
+        <tr th:each="recipe, iterStat:${recipes}">
+            <td th:text="${recipe.name}">Recept 1</td>
+            <td th:text="${recipe.description}">Leírás 1</td>
+            <td>
+                <a th:href="@{'/recipe/'+${iterStat.index}}">Szerkesztés</a>
+            </td>
+        </tr>
+</table>
+    </body>
+</html>
